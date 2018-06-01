@@ -1,5 +1,6 @@
 package name.jacklewis.reactivehealth;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,21 +17,24 @@ import com.jakewharton.rxbinding2.view.RxView;
 public class MainActivity extends AppCompatActivity {
 
     final private static String TAG = "MainActivity";
+    FloatingActionButton fab;
 
 
+    @SuppressLint("CheckResult")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.i(TAG, "onCreate() called.");
 
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         RxView.clicks(fab)
-                .subscribe(clickEvent ->
-                        Log.d(TAG, "Click Event! " + clickEvent.toString()));
+                .subscribe(clickEvent -> {
+                    Log.i(TAG, "Starting Bluetooth Scan! ");
+
+                });
     }
 
     @Override

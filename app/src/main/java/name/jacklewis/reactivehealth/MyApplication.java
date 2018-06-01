@@ -4,10 +4,13 @@ import android.app.Application;
 import android.content.res.Configuration;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.polidea.rxandroidble2.RxBleClient;
 
 public class MyApplication extends Application {
 
     private FirebaseAnalytics mFirebaseAnalytics;
+    static RxBleClient rxBleClient; //single instance of the client, can be used by all.
+
 
     @Override
     public void onCreate() {
@@ -16,6 +19,8 @@ public class MyApplication extends Application {
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        rxBleClient = RxBleClient.create(this);
+
     }
 
     // Called by the system when the device configuration changes while your component is running.
