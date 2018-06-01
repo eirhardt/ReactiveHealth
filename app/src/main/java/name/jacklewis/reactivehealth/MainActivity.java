@@ -3,7 +3,9 @@ package name.jacklewis.reactivehealth;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,7 +19,10 @@ import com.jakewharton.rxbinding2.view.RxView;
 public class MainActivity extends AppCompatActivity {
 
     final private static String TAG = "MainActivity";
-    FloatingActionButton fab;
+    private FloatingActionButton fab;
+    private DrawerLayout mDrawerLayout;
+    NavigationView navigationView;
+
 
 
     @SuppressLint("CheckResult")
@@ -30,7 +35,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         fab = findViewById(R.id.fab);
-        RxView.clicks(fab)
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        RxView.clicks(navigationView)
+                .subscribe(menuItem -> {
+                    Log.i(TAG, "Menu Item Clicked!");
+
+                });
+        Rx.clicks(fab)
                 .subscribe(clickEvent -> {
                     Log.i(TAG, "Starting Bluetooth Scan! ");
 

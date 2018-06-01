@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">ReactiveHealth</string>
     <string name="action_settings">Settings</string>
+
+    <string name="bp_devices">BP Monitor(s)</string>
+    <string name="scales">Scale(s)</string>
+    <string name="glucometers">Glucometer(s)</string>
+
+
 </resources>
