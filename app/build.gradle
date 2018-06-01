@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "name.jacklewis.reactivehealth"
+        minSdkVersion 22
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '27.0.3'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.google.firebase:firebase-core:16.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //a bunch of good libraries to examine and possibly utilize
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'    //rxJava2
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'    //RxAndroid2
+    implementation 'com.polidea.rxandroidble2:rxandroidble:1.5.0'    //RxAndroidBLE
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'    //okHttp
+    implementation 'com.squareup.okio:okio:1.14.0'    //okIO
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'    //Retrofit
+    implementation 'com.jakewharton.rxbinding2:rxbinding:2.1.1'    //rxBinding
+    implementation 'com.airbnb.android:lottie:2.5.4'    //Lottie animations
+    implementation 'com.nabinbhandari.android:permissions:3.5'//Permission Handler
+    implementation 'com.github.medyo:fancybuttons:1.8.4'//Fancy buttons? sounds tight.
+
+}
+
+apply plugin: 'com.google.gms.google-services'

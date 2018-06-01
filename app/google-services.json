@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "866761280803",
+    "firebase_url": "https://reactivehealth-a58ec.firebaseio.com",
+    "project_id": "reactivehealth-a58ec",
+    "storage_bucket": "reactivehealth-a58ec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866761280803:android:4d3f0e6dbee935cc",
+        "android_client_info": {
+          "package_name": "name.jacklewis.reactivehealth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866761280803-tse7o8arfskuttt4dmbftlfhg2dpjdja.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "name.jacklewis.reactivehealth",
+            "certificate_hash": "c8691e4adf3d7bbf547d7ca76493098188f6a09f"
+          }
+        },
+        {
+          "client_id": "866761280803-1o5k9cu6s9nppleon6pdpn3h0mgne31v.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "866761280803-1o5k9cu6s9nppleon6pdpn3h0mgne31v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA93xlDshDWJuN0saZ-jwzti7h8suOz4E4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866761280803-1o5k9cu6s9nppleon6pdpn3h0mgne31v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
