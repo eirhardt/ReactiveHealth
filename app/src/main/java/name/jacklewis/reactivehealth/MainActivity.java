@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.jakewharton.rxbinding2.support.design.widget.RxNavigationView;
 import com.jakewharton.rxbinding2.view.RxView;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,12 +38,19 @@ public class MainActivity extends AppCompatActivity {
         fab = findViewById(R.id.fab);
         mDrawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
-        RxView.clicks(navigationView)
+        RxNavigationView.itemSelections(navigationView)
                 .subscribe(menuItem -> {
                     Log.i(TAG, "Menu Item Clicked!");
+                    if (menuItem.isChecked()) {
+                        menuItem.setIcon(R.drawable.arrow_folded);
+                        menuItem.setChecked(false);
+                    } else {
+                        menuItem.setIcon(R.drawable.arrow_unfolded);
+                        menuItem.setChecked(true);
+                    }
 
                 });
-        Rx.clicks(fab)
+        RxView.clicks(fab)
                 .subscribe(clickEvent -> {
                     Log.i(TAG, "Starting Bluetooth Scan! ");
 
